@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Layout, Menu, Avatar, Badge, Space, Typography, Drawer, Button, Row, Col, Card, Grid } from 'antd';
+import { Layout, Menu, Avatar, Badge, Space, Typography, Drawer, Button, Card, Grid } from 'antd';
 import {
     LayoutDashboard, Home, Users, ReceiptText, Settings,
     Bell, Search, Menu as MenuIcon, X
@@ -29,7 +29,7 @@ export default function HomePage() {
             <Sider
                 width={260}
                 collapsed={collapsed}
-                className="!hidden md:!block !bg-[#0f172a] border-r border-slate-800 sticky top-0 h-screen"
+                className="hidden! md:block! bg-[#0f172a]! border-r border-slate-800 sticky top-0 h-screen"
             >
                 <SidebarContent menuItems={menuItems} />
             </Sider>
@@ -77,7 +77,7 @@ export default function HomePage() {
                         <Badge count={5} size="small" color="#3b82f6">
                             <Bell size={20} className="text-slate-400" />
                         </Badge>
-                        <div className="h-6 w-[1px] bg-slate-100 hidden sm:block" />
+                        <div className="h-6 w-px bg-slate-100 hidden sm:block" />
                         <Space className="cursor-pointer">
                             {/* Tên Admin: Tự ẩn trên mobile qua class hidden xs:block */}
                             <div className="text-right leading-tight hidden xs:block">
@@ -94,10 +94,10 @@ export default function HomePage() {
 
                 {/* CONTENT - Bo góc nhẹ hơn trên Mobile để tối ưu diện tích */}
                 <Content className="p-4 md:p-8">
-                    <div className="max-w-[1400px] mx-auto">
+                    <div className="max-w-350 mx-auto">
                         {/* Welcome Section */}
                         <div className="mb-8">
-                            <Title level={2} className="!mb-1">Bảng điều khiển</Title>
+                            <Title level={2} className="mb-1!">Bảng điều khiển</Title>
                             <Text className="text-slate-400">Chào mừng quay trở lại, hệ thống đã sẵn sàng.</Text>
                         </div>
 
@@ -112,7 +112,7 @@ export default function HomePage() {
                                 <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.2 }} key={idx} className="h-full">
                                     <Card
                                         variant="borderless"
-                                        className="!rounded-[24px] shadow-sm overflow-hidden group h-full"
+                                        className="rounded-3xl! shadow-sm overflow-hidden group h-full"
                                         styles={{ body: { height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' } }}
                                     >
                                         <div className="flex items-start justify-between">
@@ -135,10 +135,10 @@ export default function HomePage() {
 
                         {/* Phần nội dung chi tiết (Ví dụ: Danh sách phòng hoặc Biểu đồ) */}
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                            <Card title="Phòng sắp hết hạn hợp đồng" className="lg:col-span-2 !rounded-[24px] shadow-sm border-none" variant="borderless">
+                            <Card title="Phòng sắp hết hạn hợp đồng" className="lg:col-span-2 rounded-3xl! shadow-sm border-none" variant="borderless">
                                 <Text className="text-slate-400 italic">Dữ liệu danh sách phòng sẽ hiển thị ở đây...</Text>
                             </Card>
-                            <Card title="Ghi chú nhanh" className="!rounded-[24px] shadow-sm border-none" variant="borderless">
+                            <Card title="Ghi chú nhanh" className="rounded-3xl! shadow-sm border-none" variant="borderless">
                                 <Text className="text-slate-400 italic">Kéo thả hoặc ghi chú tại đây...</Text>
                             </Card>
                         </div>
@@ -161,7 +161,7 @@ function SidebarContent({ menuItems }: { menuItems: any }) {
                 mode="inline"
                 defaultSelectedKeys={['1']}
                 items={menuItems}
-                className="!bg-transparent !border-none px-3 flex-1"
+                className="bg-transparent! border-none! px-3 flex-1"
                 theme="dark"
             />
         </div>
